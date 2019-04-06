@@ -74,20 +74,26 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'confing.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
+##############
+## Database ##
+##############
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'django_mongodb_engine',
+	'NAME': 'test',
+	'USER': '',
+	'PASSWORD': '',
+	'HOST': 'localhost',
+	'PORT': '27017',
+	'SUPPORTS_TRANSACTIONS': False,
+    } 
 }
 
 
-# Password validation
-# https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
+#########################
+## Password validation ##
+#########################
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -103,6 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
 
 ###########################
 ## Internationalization  ##
